@@ -1,0 +1,45 @@
+<?php
+
+include_once('featureoa.features.inc');
+
+function featureoa_init() {
+  drupal_add_css(drupal_get_path('module', 'featureoa') .'/featureoa.css');
+}
+function featureoa_menu() {
+
+   $items['featureoa'] = array(
+    'title' => t('FeatureOA'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('featureoa_form_usuario'),
+     'access callback' =>  TRUE,
+    'access arguments' => array(1),
+    'type' => MENU_NORMAL_ITEM,
+   // 'file path' => drupal_get_path('module', 'featureoa') .'/includes',
+   // 'file' => 'featureoa.usuario.inc',
+    'menu_name' => 'features',
+    );
+
+    $items['featureoa/view'] = array(
+    'title' => t('FeatureOA'),
+     'access callback' => TRUE,
+    'access arguments' => array(1),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+     'parent' => 'featureoa',
+     'weight' => -10,
+    );
+    return $items;
+}
+
+function featureoa_form_usuario(&$form_state) {
+  
+   $form['numero_tarjeta'] = array(
+    '#title' => t('Numero de tarjeta'),
+    '#type' => 'textfield',
+    '#default_value' => '',
+      '#size' => 20,
+        '#maxlength' => 20,
+	);
+   
+  return $form;
+}
+  

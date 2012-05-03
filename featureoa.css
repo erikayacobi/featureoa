@@ -1,0 +1,11 @@
+#features-menu li a.icon-featureoa span.icon {
+  background:url(images/icon.png) no-repeat;
+}
+
+.feature .feature-featureoa {
+  background:transparent url(images/iconsmall.png) no-repeat;
+}
+
+span.feature-featureoa {
+  background:url(images/iconsmall.png) no-repeat !important;
+}
